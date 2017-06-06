@@ -1,10 +1,13 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
+    lintOptions {
+        abortOnError false
+    }
+    publishNonDefault true
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.uestczhh.commonlib"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -26,6 +29,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    //    compile project(':commlib')
-    compile project(':commlib')
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.squareup.okio:okio:1.13.0'
 }
